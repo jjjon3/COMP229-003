@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "connect": "^3.7.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "week2demo",
+  "version": "1.0.0",
+  "description": "demo for week2",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjjon3/COMP229-003.git"
+  },
+  "author": "jon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjjon3/COMP229-003/issues"
+  },
+  "homepage": "https://github.com/jjjon3/COMP229-003#readme"
+}
