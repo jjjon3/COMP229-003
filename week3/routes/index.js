@@ -6,24 +6,28 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
+router.get('/home', function(req, res, next) {
+  res.render('index', { title: 'Home' });
+});
+
 /* GET about page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Us' });
+  res.render('index', { title: 'About Me' });
 });
 
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact Us' });
+  res.render('index', { title: 'Contact Us' });
 });
 
-/* GET product page. */
-router.get('/product', function(req, res, next) {
-  res.render('product', { title: 'Products' });
+/* GET project page. */
+router.get('/projects', function(req, res, next) {
+  res.render('index', { title: 'Projects' });
 });
 
 /* GET services page. */
 router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services' });
+  res.render('index', { title: 'Services' });
 });
 
 module.exports = router;
