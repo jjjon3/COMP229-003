@@ -1,9 +1,73 @@
 <%-include partials/header.ejs%>
 <%-include partials/main_nav.ejs%>
-<main class="container">
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to the <%= title %> Page</h1>
+<section class="contact">
+  <div class="contact-content">
+    <h2>Contact Me</h2>
+    <p>For further information or inquiries, you may contact me using any of the details below.</p>
   </div>
-</main>
+  <div class="container-contact">
+    <div class="contact-info">
+
+      <div class="box-info">
+        <div class="icon">
+          <i class="fa-sharp fa-solid fa-phone"></i>
+        </div>
+
+        <div class="text-details">
+          <h3>Phone</h3>
+          <p>(647) 894-5281</p>
+        </div>
+      </div>
+
+      <div class="box-info">
+        <div class="icon">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+
+        <div class="text-details">
+          <h3>Email</h3>
+          <p>janssen.nunag@gmail.com</p>
+        </div>
+      </div>
+      
+      <div class="box-info">
+        <div class="icon">
+          <i class="fa-solid fa-location-pin"></i>
+        </div>
+
+        <div class="text-details">
+          <h3>Address</h3>
+          <p>1216 Pharmacy Avenue,<br>Scarborough, ON,<br>M1R 2H9</p>
+        </div>
+      </div>  
+    </div>
+
+
+      <div class="contact-form">
+        <form action="/home">
+          <h2>Send Message</h2>
+
+          <div class="inputBox">
+            <input type="text" name="" required="required"/>
+            <span>Full Name</span>
+          </div>
+
+          <div class="inputBox">
+            <input type="text" name="" required="required"/>
+            <span>Email Address</span>
+          </div>
+
+          <div class="inputBox">
+            <textarea required="required"></textarea>
+            <span>Type your inquiry</span>
+          </div>
+
+          <div class="inputBox">
+            <input type="submit" value="Send"/>
+          </div>
+        </form>
+      </div>
+  </div>
+</section>
 <%-include partials/bottom_nav.ejs%>
 <%-include partials/footer.ejs%>

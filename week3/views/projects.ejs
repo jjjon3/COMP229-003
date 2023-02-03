@@ -1,9 +1,50 @@
 <%-include partials/header.ejs%>
 <%-include partials/main_nav.ejs%>
-<main class="container">
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to the <%= title %> Page</h1>
+<div class="projects">
+  <div class="proj-content">
+    <h2>My Projects</h2>
+    <p>Slide through some of the projects that I have worked on</p>
   </div>
-</main>
+
+  <!-- Carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/images/itsm.jpg" class="d-block w-100" alt="..." height="500px">
+        <h3>Migration and Integration of Legacy Systems</h3>
+        <h5>Roles: Developer, Support, Tester, BA, All-around. lol</h5>
+        <p>Project Description</p>
+        <br><br><br>
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/payroll.png" class="d-block w-100" alt="..." height="500px">
+        <h3>Payroll System</h3>
+        <h5>Role: Lead Developer</h5>
+        <p>Developed and deployed a Payroll System written in C# that automates a local company's manual processes for payroll generation and timesheet tracking</p>
+        <br><br><br>
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/POS.jpg" class="d-block w-100" alt="..." height="500px">
+        <h3>Inventory and Sales System</h3>
+        <h5>Roles: Lead Developer, Data Architect</h5>
+        <p>Developed an Inventory and Sales Application for a retail store.</p>
+        <br><br><br>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 <%-include partials/bottom_nav.ejs%>
 <%-include partials/footer.ejs%>

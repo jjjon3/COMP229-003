@@ -1,46 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="/assets/images/logo.png" width="54" height="54" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-          <% if(title=="Home") {%>
-            <li class="nav-item active">
-          <%} else {%>
-            <li class="nav-item">
-          <%}%>
-            <a class="nav-link active" aria-current="page" href="/home"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <% if(title=="About") {%>
-            <li class="nav-item active">
-          <%} else {%>
-            <li class="nav-item">
-          <%}%>
-            <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-user"></i></i> About</a>
-          </li>
-          <% if(title=="Projects") {%>
-            <li class="nav-item active">
-          <%} else {%>
-            <li class="nav-item">
-          <%}%>
-            <a class="nav-link active" aria-current="page" href="/projects"><i class="fa-solid fa-briefcase"></i></i> Projects</a>
-          </li>
-          <% if(title=="Services") {%>
-            <li class="nav-item active">
-          <%} else {%>
-            <li class="nav-item">
-          <%}%>
-            <a class="nav-link active" aria-current="page" href="/services"><i class="fa-solid fa-bell-concierge"></i> Services</a>
-          </li>
-          <% if(title=="Contact") {%>
-            <li class="nav-item active">
-          <%} else {%>
-            <li class="nav-item">
-          <%}%>
-            <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-envelope"></i></i> Contact Us</a>
-          </li>
-      </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-*">
+    <a class="navbar-brand" href="/home">
+      <img src="/assets/images/logo.png" width="60" height="60" alt="">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item">
+        <% if(title=="Home") {%>
+          <a class="nav-link active" aria-current="page" href="/home"><i class="fa-solid fa-house"></i> Home</a>
+        <%} else {%>
+          <a class="nav-link" aria-current="page" href="/home"><i class="fa-solid fa-house"></i> Home</a>
+        <%}%>
+        </li>
+
+        <li class="nav-item">
+        <% if(title=="About") {%>
+          <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-user"></i></i> About</a>
+        <%} else {%>
+          <a class="nav-link" aria-current="page" href="/about"><i class="fa-solid fa-user"></i></i> About</a>
+        <%}%>            
+        </li>
+
+        <li class="nav-item">
+        <% if(title=="Projects") {%>
+          <a class="nav-link active" aria-current="page" href="/projects"><i class="fa-solid fa-briefcase"></i></i> Projects</a>
+        <%} else {%>
+          <a class="nav-link" aria-current="page" href="/projects"><i class="fa-solid fa-briefcase"></i></i> Projects</a>
+        <%}%>
+        </li>
+
+        <li class="nav-item">
+        <% if(title=="Services") {%>
+          <a class="nav-link active" aria-current="page" href="/services"><i class="fa-solid fa-bell-concierge"></i> Services</a>
+        <%} else {%>
+          <a class="nav-link" aria-current="page" href="/services"><i class="fa-solid fa-bell-concierge"></i> Services</a>
+        <%}%>
+        </li>
+
+        <li class="nav-item">
+        <% if(title=="Contact") {%>
+          <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-envelope"></i></i> Contact Us</a>
+        <%} else {%>
+          <a class="nav-link" aria-current="page" href="/contact"><i class="fa-solid fa-envelope"></i></i> Contact Us</a>
+        <%}%>
+        </li>
+      </ul>
+    </div>
+</nav>
