@@ -10,7 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url('/assets/fonts/Rubik/static/Rubik-Regular.ttf');
 }
 
 /*CSS for navbar*/
@@ -41,11 +45,18 @@ body{
     font-size: 80px;
     font-weight: 600;
     color: turquoise;
+    transition: 0.5s ease-out;
 }
 
-span {
-    color: turquoise;
+.container h1:hover {
+    color: gray;
+    text-shadow: 0 0 10px #d4f7f2, 0 0 20px #d4f7f2, 0 0 40px #d4f7f2;
+  }
+
+.btn btn-info{
+    padding: 10px 25px;
 }
+
 
 
 /* CSS for about.ejs page starts here*/
@@ -78,7 +89,7 @@ span {
     color: #a7a9be;
 }
 
-.btn{
+.btn btn-primary{
     padding: 16px 45px;
 }
 
@@ -135,7 +146,7 @@ span {
     margin-bottom: 12px;
     font-weight: 400;
     text-align: center;
-    color: #fffffe;
+    color: black;
 }
 
 .card p{
@@ -145,7 +156,7 @@ span {
 }
 
 .card:hover p{
-    color: #fffffe;
+    color: black;
     text-align: center;
 }
 
@@ -156,29 +167,31 @@ span {
 
 .card:hover i{
     margin: 20px;
-    color:#fffffe;
+    color: black;
 }
-
 
 .card:nth-child(1):hover{
     background:linear-gradient(45deg, 
     rgba(255,0,0,0.5) 0%, 
     rgba(255,20,0,0.6) 100%), 
     url('/assets/images/programming.png');
+    background-size: cover;
 }
 
 .card:nth-child(2):hover{
     background:linear-gradient(45deg, 
     rgba(0,245,109,0.5) 0%, 
     rgba(0,255,120,0.6) 100%), 
-    url('/assets/images/android.png');
+    url('/assets/images/reports.png');
+    background-size: cover;
 }
 
 .card:nth-child(3):hover{
     background:linear-gradient(45deg, 
     rgba(32,32,255,0.5) 0%, 
     rgba(61, 61, 255, 0.6) 100%), 
-    url('/assets/images/programming2.png');
+    url('/assets/images/consulting.jpg');
+    background-size: cover;
 }
 
 /* CSS for projects.ejs page starts here */

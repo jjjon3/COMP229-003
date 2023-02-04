@@ -6,6 +6,7 @@ let logger = require('morgan');
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+const exp = require('constants');
 
 let app = express();
 
@@ -22,6 +23,20 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//POST method for contact form submission
+//app.use(express.urlencoded({ extended: true}));
+app.post('/contact', (req, res) => {
+  const { name, email, phone, message } = req.body;
+
+  //log the form content
+  console.log(`Name: ${name}`);
+  console.log(`Email Address: ${email}`);
+  console.log(`Phone Number: ${phone}`);
+  console.log(`Message: ${message}`);
+  //redirect user back to home page
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
