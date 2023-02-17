@@ -4,11 +4,14 @@
 <div class="row">
     <div class="offset-md-1 col md-10">
         <h1><%=title%></h1>
-        <a href="/bookList/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Book</a>
+        <% if(typeof displayName == 'string' && displayName) { %>
+            <a href="/bookList/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Book</a>
+        <% } %>
         <br>
         <table class="table table-bordered table-striped table-hover">
             <!-- Header Row-->
             <tr class="d-flex">
+                <% if(typeof displayName == 'string' && displayName) { %>
                 <th class="text-center col-2">Name</th>
                 <th class="text-center col-2">Author</th>
                 <th class="text-center col-1">Published</th>
@@ -16,10 +19,18 @@
                 <th class="text-center col-1">Price</th>
                 <th class="text-center col-1"></th>
                 <th class="text-center col-1"></th>
+                <% } else { %>
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Author</th>
+                    <th class="text-center col-1">Published</th>
+                    <th class="col-6">Description</th>
+                    <th class="text-center col-1">Price</th>
+                <% } %>
             </tr>
             <!-- Data Row -->
             <% for(let count = 0; count < BookList.length; count++) {%>
             <tr class="d-flex">
+                <% if(typeof displayName == 'string' && displayName) { %>
                 <td class="text-center col-2"><%=BookList[count].name%></td>
                 <td class="text-center col-2"><%=BookList[count].author%></td>
                 <td class="text-center col-1"><%=BookList[count].published%></td>
@@ -27,6 +38,13 @@
                 <td class="text-center col-1"><%=BookList[count].price%></td>
                 <td class="text-center col-1"><a href="/bookList/edit/<%=BookList[count]._id%>" class="btn btn-primary" role="button"><i class="fas fa-pencil"></i> Edit</a></td>
                 <td class="text-center col-1"><a href="/bookList/delete/<%=BookList[count]._id%>" class="btn btn-danger" role="button"><i class="fas fa-trash"></i> Delete</a></td>
+                <% } else { %>
+                    <td class="text-center col-2"><%=BookList[count].name%></td>
+                    <td class="text-center col-2"><%=BookList[count].author%></td>
+                    <td class="text-center col-1"><%=BookList[count].published%></td>
+                    <td class="col-6"><%=BookList[count].description%></td>
+                    <td class="text-center col-1"><%=BookList[count].price%></td>
+                <% } %>
             </tr>
             <% } %>
         </table>
