@@ -1,0 +1,347 @@
+/*
+  Janssen Nunag
+  301234890
+  COMP229-003 W2023
+  Feb 27, 2023
+*/
+
+/*Global CSS settings*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url('/assets/fonts/Rubik/static/Rubik-Regular.ttf');
+}
+
+/*CSS for navbar*/
+
+.nav-link {
+    color: turquoise;
+}
+
+/*CSS for index.ejs / home page starts here*/
+
+body{
+    background-color: black;
+    color: whitesmoke;
+    margin: auto;
+}
+
+.container {
+    min-height: 100%;  
+    min-height: 100vh; 
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h1 {
+    font-size: 80px;
+    font-weight: 600;
+    color: turquoise;
+    transition: 0.5s ease-out;
+}
+
+.container h1:hover {
+    color: gray;
+    text-shadow: 0 0 10px #d4f7f2, 0 0 20px #d4f7f2, 0 0 40px #d4f7f2;
+  }
+
+.btn btn-info{
+    padding: 10px 25px;
+}
+
+
+
+/* CSS for about.ejs page starts here*/
+
+.about{
+    width: 100%;
+    padding: 78px 0px;
+}
+
+.about-main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-text{
+    width: 550px;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
+
+.about-text h2{
+    color: turquoise;
+}
+
+.about-text p{
+    color: #a7a9be;
+}
+
+.btn btn-primary{
+    padding: 16px 45px;
+}
+
+/* CSS for services.ejs page starts here*/
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.wrapper h1{
+    font-size: 3em;
+    margin: 25px 0;
+    text-align: center;
+    font-weight: 500;
+    color:#fffffe;
+}
+
+.content-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-top: 30px;
+}
+
+.card{
+    min-height: 220px;
+    width: 320px;
+    padding: 30px;
+    border-radius: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    margin: 10px 4px;
+    border: 1px solid turquoise;
+    transition: 3s;
+}
+
+.card h2{
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: center;
+    color: turquoise;
+    text-justify: auto;
+}
+
+.card:hover h2{
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: center;
+    color: black;
+}
+
+.card p{
+    color: #94a1b2;
+    text-align: center;
+    text-justify: auto;
+}
+
+.card:hover p{
+    color: black;
+    text-align: center;
+}
+
+.card i{
+    margin: 20px;
+    color:#94a1b2;
+}
+
+.card:hover i{
+    margin: 20px;
+    color: black;
+}
+
+.card:nth-child(1):hover{
+    background:linear-gradient(45deg, 
+    rgba(255,0,0,0.5) 0%, 
+    rgba(255,20,0,0.6) 100%), 
+    url('/assets/images/programming.png');
+    background-size: cover;
+}
+
+.card:nth-child(2):hover{
+    background:linear-gradient(45deg, 
+    rgba(0,245,109,0.5) 0%, 
+    rgba(0,255,120,0.6) 100%), 
+    url('/assets/images/reports.png');
+    background-size: cover;
+}
+
+.card:nth-child(3):hover{
+    background:linear-gradient(45deg, 
+    rgba(32,32,255,0.5) 0%, 
+    rgba(61, 61, 255, 0.6) 100%), 
+    url('/assets/images/consulting.jpg');
+    background-size: cover;
+}
+
+/* CSS for projects.ejs page starts here */
+
+.proj-content{
+    text-align: center;
+}
+
+.proj-content h2{
+    color: turquoise;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 80%;
+    padding-left: 20%;
+    text-align: center;
+}
+
+
+/* CSS for contact.ejs page starts here*/
+
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact .contact-content{
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .contact-content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: turquoise;
+}
+
+.contact .contact-content p{
+    font-weight: 300;
+    color: #fffffe
+}
+
+.container-contact{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container-contact .contact-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-contact .contact-info .box-info{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container-contact .contact-info .box-info .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #0f0e17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    color:turquoise;
+}
+
+.container-contact .contact-info .box-info .text-details{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fffffe;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.container-contact .contact-info .box-info .text-details h3{
+    color: turquoise;
+    font-weight: 300;
+}
+
+.contact-form{
+    width: 40%;
+    padding: 40px;
+    background: turquoise;
+}
+
+.contact-form h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contact-form .inputBox input,
+.contact-form .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    background: turquoise;
+    outline: none;
+    resize: none;
+}
+
+.contact-form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #0f0e17;
+}
+
+.contact-form .inputBox input:focus ~ span,
+.contact-form .inputBox input:valid ~ span,
+.contact-form .inputBox textarea:focus ~ span,
+.contact-form .inputBox textarea:valid ~ span{
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contact-form .inputBox input[type="submit"]{
+    width: 100px;
+    background: #0f0e17;
+    color: turquoise;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}

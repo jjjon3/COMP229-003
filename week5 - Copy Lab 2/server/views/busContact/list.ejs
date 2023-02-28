@@ -1,0 +1,47 @@
+<%-include ../partials/header.ejs%>
+<%-include ../partials/main_nav.ejs%>
+<main class="container">
+<div class="row">
+    <div class="col-md-15">
+        <table class="table table-sm table-dark table-borderless table-striped table-hover">
+            <!-- Header Row-->
+            <tr class="d-flex">
+                <% if(typeof displayName == 'string' && displayName) { %>
+                <th class="text-center col-4">Name</th>
+                <th class="text-center col-4">Number</th>
+                <th class="text-center col-6">Email</th>
+                <th class="text-center col-2"></th>
+                <th class="text-center col-2"></th>
+                <% } else { %>
+                    <th class="text-center col-4">Name</th>
+                    <th class="text-center col-4">Number</th>
+                    <th class="text-center col-6">Email</th>
+                <% } %>
+            </tr>
+            <!-- Data Row -->
+            <% for(let count = 0; count < ContactList.length; count++) {%>
+            <tr class="d-flex">
+                <% if(typeof displayName == 'string' && displayName) { %>
+                <td class="text-center col-4"><%=ContactList[count].name%></td>
+                <td class="text-center col-4"><%=ContactList[count].number%></td>
+                <td class="text-center col-6"><%=ContactList[count].email%></td>
+                <td class="text-center col-2"><a href="/businessContacts/edit/<%=ContactList[count]._id%>" class="btn btn-primary" role="button"><i class="fas fa-pencil"></i> Edit</a></td>
+                <td class="text-center col-2"><a href="/businessContacts/delete/<%=ContactList[count]._id%>" class="btn btn-danger" role="button"><i class="fas fa-trash"></i> Delete</a></td>
+                <% } else { %>
+                    <td class="text-center col-4"><%=ContactList[count].name%></td>
+                    <td class="text-center col-4"><%=ContactList[count].number%></td>
+                    <td class="text-center col-6"><%=ContactList[count].email%></td>
+                <% } %>
+            </tr>
+            <% } %>
+        </table>
+
+        <% if(typeof displayName == 'string' && displayName) { %>
+            <a href="/businessContacts/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Business Contact</a>
+        <% } %>
+    </div>
+</div>
+
+</main>
+<%-include ../partials/bottom_nav.ejs%>
+<%-include ../partials/footer.ejs%>
