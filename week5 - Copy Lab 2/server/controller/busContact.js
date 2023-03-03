@@ -13,7 +13,7 @@ module.exports.displayBusinessContactList = (req, res, next) => {
         } else {
             res.render('busContact/list',{title:'Business', ContactList:contactList, displayName:req.user?req.user.displayName:''});
         }
-    });
+    }).sort('name');
 };
 
 module.exports.displayAddPage = (req, res, next) => {

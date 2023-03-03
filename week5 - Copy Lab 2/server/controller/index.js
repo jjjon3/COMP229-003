@@ -111,5 +111,6 @@ module.exports.performLogout = (req,res,next) => {
         if(err) {
             return next(err);
         }
+        res.redirect('/');
     });
 };
