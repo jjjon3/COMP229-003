@@ -2,6 +2,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+const { title } = require('process');
 
 // define the book model
 let book = require('../models/books');
@@ -29,7 +30,7 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
+    res.render('books/add', {title:'Add Book'});
 });
 
 // POST process the Book Details page and create a new Book - CREATE
@@ -38,7 +39,21 @@ router.post('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
+    let newBook = book({
+      "Title":req.body.title,
+      "Description":req.body.description,
+      "Price":req.body.price,
+      "Author":req.body.author,
+      "Genre":req.body.genre,
+    });
+    book.create(newBook,(err,book) => {
+      if(err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        res.redirect('/books');
+      }
+    });
 });
 
 // GET the Book Details page in order to edit an existing Book
