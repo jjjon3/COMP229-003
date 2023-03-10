@@ -71,6 +71,7 @@ module.exports = function() {
                 price: 12,
                 __v: 0
               }
-        ]
-    }
-}
+        ],
+        orders: []
+    };
+};
