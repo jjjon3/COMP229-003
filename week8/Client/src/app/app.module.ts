@@ -11,6 +11,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
+//import { BookStoreComponent } from './store/book-store/book-store.component';
+import { BookStoreComponent } from './book-store/book-store.component';
+import { ModelModule } from './model/model.module';
+
 
 @NgModule({
   declarations: [
@@ -22,11 +26,13 @@ import { BasePageComponent } from './partials/base-page/base-page.component';
     ContactComponent,
     ProductsComponent,
     ServicesComponent,
-    BasePageComponent
+    BasePageComponent,
+    BookStoreComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
