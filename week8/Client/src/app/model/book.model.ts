@@ -1,4 +1,5 @@
 export class Book {
+    id: any;
     constructor(
         public _id?: number,
         public name?: string,

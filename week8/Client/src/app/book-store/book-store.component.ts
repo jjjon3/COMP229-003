@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Book} from '../model/book.model';
 import { BookRepository } from '../model/book.repository';
+import { Cart } from "../model/cart.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-book-store',
@@ -12,7 +14,7 @@ export class BookStoreComponent implements OnInit {
   public booksPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repository:BookRepository) { }
+  constructor(private repository:BookRepository, private cart:Cart, private router:Router) { }
   
   ngOnInit(): void {
 
@@ -40,7 +42,12 @@ export class BookStoreComponent implements OnInit {
     this.changePage(1);
   }
 
-  get pageNumbers():number[] {
-    return Array(Math.ceil(this.repository.getBooks(this.selectedAuthor).length/this.booksPerPage)).fill(0).map((x,i) => i+1);
+  get pageCount():number {
+    return Math.ceil(this.repository.getBooks(this.selectedAuthor).length/this.booksPerPage);
+  }
+
+  addBookToCart(book: Book) {
+    this.cart.addLine(book);
+    this.router.navigateByUrl("/cart");
   }
 }
