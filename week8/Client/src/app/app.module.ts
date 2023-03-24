@@ -13,7 +13,8 @@ import { AppComponent } from './app.component';
 //import { BasePageComponent } from './partials/base-page/base-page.component';
 //import { BookStoreComponent } from './book-store/book-store.component';
 //import { ModelModule } from './model/model.module';
-import { BookStoreModule } from "./book-store/book-store.module";
+import { PartialsModule } from './partials/partials.module';
+import { BookStoreModule } from './book-store/book-store.module';
 import { BookStoreComponent } from "./book-store/book-store.component";
 import { CheckoutComponent } from "./book-store/checkout.component";
 import { CartDetailComponent } from "./book-store/cartDetail.component";
@@ -22,10 +23,14 @@ import { StoreFirstGuard } from "./storeFirst.guard";
 
 
 @NgModule({
-  imports: [BrowserModule, BookStoreModule, RouterModule.forRoot([
+  imports: [BrowserModule, BookStoreModule, PartialsModule, RouterModule.forRoot([
     { path: "book-store", component: BookStoreComponent, canActivate: [StoreFirstGuard] },
     { path: "cart", component: CartDetailComponent, canActivate: [StoreFirstGuard] },
     { path: "checkout", component: CheckoutComponent, canActivate: [StoreFirstGuard] },
+    { path: "admin",
+      loadChildren: () => import("./admin/admin.module").then(m => m.AdminModule),
+      canActivate: [StoreFirstGuard]
+    },
     { path: "**", redirectTo: "/book-store" }
     ])],
   providers: [StoreFirstGuard],

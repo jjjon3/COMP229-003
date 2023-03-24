@@ -7,6 +7,9 @@
             <button *ngFor='let author of authors' class="btn btn-outline-primary col-12 m-1" [class.active]='author == selectedAuthor' (click)='changeAuthor(author)'>
                 {{author}}
             </button>
+            <button class="btn btn-block btn-danger mt-5" routerLink="/admin">
+            Admin
+            </button>
         </div>
         <div class="col-9 p-2">
             <div *ngFor='let book of books' class="card m-1 p-1 bg-light">
@@ -30,7 +33,7 @@
                     <option value="8">8 Per Page</option>
                 </select>
                 <div class="btn-group float-end">
-                    <button *counter='let page of pageNumbers' (click)='changePage(page)' class="btn btn-outline-primary" [class.active]='page==selectedPage'>
+                    <button *counter='let page of pageCount' (click)='changePage(page)' class="btn btn-outline-primary" [class.active]='page==selectedPage'>
                         {{page}}
                     </button>
                 </div>
