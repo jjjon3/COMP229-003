@@ -1,3 +1,22 @@
-<div class="bg-info p-2 text-white">
-    <h3>Placeholder for Admin Features</h3>
+<div class="container-fluid">
+    <div class="row mt-2">
+    <div class="col-3">
+    <button class="btn btn-outline-info col-12 m-1"
+    routerLink="/admin/main/books"
+    routerLinkActive="active">
+    Books
+    </button>
+    <button class="btn btn-outline-info col-12 m-1"
+routerLink="/admin/main/orders"
+routerLinkActive="active">
+Orders
+</button>
+<button class="btn btn-outline-danger col-12 m-1" (click)="logout()">
+Logout
+</button>
+</div>
+<div class="col-9">
+<router-outlet></router-outlet>
+</div>
+</div>
 </div>
